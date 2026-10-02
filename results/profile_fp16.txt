@@ -1,0 +1,22 @@
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                           aten::linear         3.25%       4.093ms        31.08%      39.171ms      54.404us       0.000us         0.00%      25.959ms      36.054us           720  
+                                            aten::addmm        14.66%      18.471ms        24.74%      31.184ms      43.312us      25.959ms        36.00%      25.959ms      36.054us           720  
+                                      aten::convolution         0.52%     649.812us        30.04%      37.858ms     114.720us       0.000us         0.00%      19.909ms      60.330us           330  
+                                     aten::_convolution         2.08%       2.625ms        29.52%      37.208ms     112.751us       0.000us         0.00%      19.909ms      60.330us           330  
+                                           aten::conv2d         0.36%     456.062us        28.42%      35.816ms     115.537us       0.000us         0.00%      18.681ms      60.261us           310  
+                                aten::cudnn_convolution         7.98%      10.056ms        20.07%      25.295ms      81.596us      15.520ms        21.52%      15.594ms      50.305us           310  
+ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_st...         0.00%       0.000us         0.00%       0.000us       0.000us      15.417ms        21.38%      15.417ms      32.120us           480  
+                     aten::scaled_dot_product_attention         0.95%       1.193ms         7.41%       9.344ms      77.865us       0.000us         0.00%      14.205ms     118.379us           120  
+              aten::_scaled_dot_product_flash_attention         0.51%     642.453us         6.47%       8.151ms      67.925us       0.000us         0.00%      14.205ms     118.379us           120  
+                         aten::_flash_attention_forward         1.23%       1.548ms         5.31%       6.693ms      55.772us      14.205ms        19.70%      14.205ms     118.379us           120  
+void pytorch_flash::flash_fwd_kernel<Flash_fwd_kerne...         0.00%       0.000us         0.00%       0.000us       0.000us      14.205ms        19.70%      14.205ms     118.379us           120  
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize96x64x...         0.00%       0.000us         0.00%       0.000us       0.000us       5.331ms         7.39%       5.331ms      44.422us           120  
+sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize96x64x...         0.00%       0.000us         0.00%       0.000us       0.000us       5.211ms         7.23%       5.211ms      43.425us           120  
+void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_...         0.00%       0.000us         0.00%       0.000us       0.000us       3.646ms         5.06%       3.646ms      28.046us           130  
+void cudnn::engines_precompiled::nchwToNhwcKernel<__...         0.00%       0.000us         0.00%       0.000us       0.000us       3.360ms         4.66%       3.360ms       7.466us           450  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 126.030ms
+Self CUDA time total: 72.113ms
+
